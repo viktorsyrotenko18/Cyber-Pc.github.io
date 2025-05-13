@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сторінка товару</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">CYBER <span>PC</span></div>
+    
+        <div class="search-box">
+          <input type="text" placeholder="Пошук">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+    
+        <div class="language">
+          <i class="fas fa-language"></i>
+          <a href="#">UK</a> | <a href="#">RU</a> | <a href="#">EN</a>
+        </div>
+    
+        <div class="login">
+          <i class='bx bx-door-open'></i>
+          <button id="loginBtn">Увійти</button>
+    
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Вхід у систему</h2>
+              <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Логін" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Увійти</button>
+              </form>         
+            </div>
+          </div>
+        </div>
+    
+        <div class="cart">
+          <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+    
+    <!-- Модальне вікно корзини -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCart()">&times;</span>
+        <h2>Ваша корзина</h2>
+        <ul id="cartItems"></ul>
+        <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+      </div>
+    </div>
+        </div>
+      </header>
+    
+      <header>
+        <nav>
+          <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+          <a href="laptop.html" onclick="navigate('shop')">МАГАЗИН</a>
+          <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+          <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+          <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+        </nav>
+        
+        <!-- Контейнер для сторінок -->
+        <div id="content"></div>
+          </ul>
+      </nav>
+  </header>
+
+    <!-- Основний контент -->
+    <section class="product-container">
+        <div class="product-gallery">
+            <img src="img/img20.png" alt="iPhone 14">
+        </div>
+
+        <div class="product-info">
+            <h1>Комп'ютер COBRA Advanced A84F.32.S1.46T.19816</h1>
+            <p>AMD Ryzen 5 8400F / RAM 32 ГБ / SSD 1ТБ / nVidia GeForce RTX 4060TI, 16 ГБ</p>
+            <h2>43 999₴</h2>
+
+            <button class="buy-button" data-product="DTOP Gaming R536">Купити</button>
+            <button onclick="addToCart('DTOP Gaming R536')">Додати в корзину</button>
+        </div>
+    </section>
+
+    <!-- Таблиця характеристик -->
+    <section class="specs">
+        <h2>Характеристики</h2>
+        <table>
+            <tr><td>Процесор:</td><td>AMD Ryzen 5 8400F</td></tr>
+            <tr><td>Відеокарта:</td><td>nVidia GeForce RTX 4060, 16 ГБ</td></tr>
+            <tr><td>Накопичувачі даних:</td><td>Обсяг SSD 1 ТБ</td></tr>
+            <tr><td>Оперативна пам'ять:</td><td>32 ГБ</td></tr>
+            <tr class="extra"><td>Короткі технічні характеристики:</td><td>Ryzen 5 8400F / GeForce RTX 4060 8 ГБ / 32 ГБ DDR5 / HDD 1 ТБ / SSD 512 ГБ M.2 PCIe</td></tr>
+            <tr class="extra"><td>Процесор:</td><td>Шестиядерний AMD Ryzen 5 8400F (4.2 – 4.7 ГГц)</td></tr>
+            <tr class="extra"><td>Чипсет материнської плати:</td><td>AMD B650</td></tr>
+            <tr class="extra"><td>Обсяг оперативної пам'яті:</td><td>32 ГБ DDR5</td></tr>
+            <tr class="extra"><td>Обсяг SSD:</td><td>512 ГБ M.2 PCIe</td></tr>
+            <tr class="extra"><td>Обсяг HDD:</td><td>1 ТБ</td></tr>
+            <tr class="extra"><td>Тип відеокарти:</td><td>Дискретна</td></tr>
+            <tr class="extra"><td>Відеокарта:</td><td>GeForce RTX 4060, 8 ГБ</td></tr>
+            <tr class="extra"><td>Тип оперативної пам'яті:</td><td>DDR5</td></tr>
+            <tr class="extra"><td>Потужність блока живлення:</td><td>500 Вт</td></tr>
+            <tr class="extra"><td>Охолодження:</td><td>Охолодження корпусу: 4 x 120 мм вентилятори</td></tr>
+            <tr class="extra"><td>ОС:</td><td>Windows 11</td></tr>
+            <tr class="extra"><td>Габарити:</td><td>Немає даних</td></tr>
+            <tr class="extra"><td>Вага:</td><td>Немає даних</td></tr>
+            <tr class="extra"><td>Комплект постачання:</td><td>ПК, кабель живлення, упаковка</td></tr>
+            <tr class="extra"><td>Гарантія:</td><td>24 місяці</td></tr>
+            <tr class="extra"><td>Клас:</td><td>Геймерські</td></tr>
+            <tr class="extra"><td>Колір:</td><td>Чорний</td></tr>
+            <tr class="extra"><td>Виробник GPU:</td><td>NVIDIA</td></tr>
+            <tr class="extra"><td>Оптичний привід:</td><td>Немає</td></tr>
+            <tr class="extra"><td>Кількість вентиляторів:</td><td>4</td></tr>
+          </table>
+        
+          <div class="show-more-btn" onclick="toggleSpecs()">Показати ще +</div>
+        </section>
+
+        <div id="buyModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Оформлення замовлення</h2>
+              <form id="buyForm">
+                  <div class="form-group">
+                      <label for="name">Ваше ім'я:</label>
+                      <input type="text" id="name" placeholder="Ваше ім'я" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="phone">Телефон:</label>
+                      <input type="tel" id="phone" placeholder="Телефон" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="address">Адреса доставки:</label>
+                      <input type="text" id="address" placeholder="Адреса доставки" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Email (за бажанням):</label>
+                      <input type="email" id="email" placeholder="Ваш email">
+                  </div>
+                  <div class="form-group">
+                      <label for="quantity">Кількість:</label>
+                      <input type="number" id="quantity" value="1" min="1">
+                  </div>
+                  <div class="form-group">
+                      <label for="payment">Спосіб оплати:</label>
+                      <select id="payment">
+                          <option value="card">Кредитна картка</option>
+                          <option value="cash">Готівка при отриманні</option>
+                          <option value="online">Онлайн оплата</option>
+                      </select>
+                  </div>
+                  <div class="form-group">
+                      <label for="comments">Додаткові побажання:</label>
+                      <textarea id="comments" placeholder="Ваші коментарі до замовлення"></textarea>
+                  </div>
+                  <input type="hidden" id="selectedProduct">
+                  <div class="button-group">
+                      <button type="button" class="cancel-button">Скасувати</button>
+                      <button type="submit" class="submit-button">Підтвердити замовлення</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ТЕЛЕФОНУЙТЕ</h3>
+                <p class="phone">0 800 20 27 27</p>
+                <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+                <a href="#" class="contact-link">Написати нам</a>
+            </div>
+    
+            <div class="footer-section">
+                <h3>КОМПАНІЯ</h3>
+                <ul>
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="#">Новини</a></li>
+                    <li><a href="#">Контакти</a></li>
+                    <li><a href="#">Вакансії</a></li>
+                    <li><a href="#">Постачальникам</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>ПОКУПЦЯМ</h3>
+                <ul>
+                    <li><a href="#">Оплата</a></li>
+                    <li><a href="#">Доставка</a></li>
+                    <li><a href="#">Повернення</a></li>
+                    <li><a href="#">Гарантія</a></li>
+                    <li><a href="#">Послуги</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section">
+                <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+                <ul>
+                    <li><a href="#">Умови користування</a></li>
+                    <li><a href="#">Портал для бізнесу</a></li>
+                </ul>
+                <div class="app-links">
+                    <a href="#"><img src="appstore.png" alt="App Store"></a>
+                    <a href="#"><img src="googleplay.png" alt="Google Play"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

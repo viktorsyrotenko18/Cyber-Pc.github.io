@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Про нас</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">CYBER <span>PC</span></div>
+    
+        <div class="search-box">
+          <input type="text" placeholder="Пошук">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+    
+        <div class="language">
+          <i class="fas fa-language"></i>
+          <a href="#">UK</a> | <a href="#">EN</a>
+        </div>
+    
+        <div class="login">
+          <i class='bx bx-door-open'></i>
+          <button id="loginBtn">Увійти</button>
+    
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Вхід у систему</h2>
+              <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Логін" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Увійти</button>
+              </form>            
+            </div>
+          </div>
+        </div>
+    
+        <div class="cart">
+          <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+    
+    <!-- Модальне вікно корзини -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCart()">&times;</span>
+        <h2>Ваша корзина</h2>
+        <ul id="cartItems"></ul>
+        <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+      </div>
+    </div>
+        </div>
+      </header>
+    
+      <header>
+          <nav>
+            <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+            <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+            <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+            <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+            <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+          </nav>
+          
+          <!-- Контейнер для сторінок -->
+          <div id="content"></div>
+            </ul>
+        </nav>
+    </header>
+
+ <section class="hero">
+    <div class="container">
+        <h2>Ласкаво просимо до CYBER PC</h2>
+        <p>CYBER PC — це сучасний онлайн-магазин, де ви знайдете найновіші моделі гаджетів, ноутбуків, смартфонів та аксесуарів.</p>
+    </div>
+</section>
+
+<section class="about">
+    <div class="container">
+        <h2>Про магазин</h2>
+        <p>Наша місія — зробити сучасні технології доступними для кожного. Ми спеціалізуємось на продажу:</p>
+        <ul>
+            <li>Ноутбуків та ПК</li>
+            <li>Навушників, колонок, зарядних пристроїв</li>
+            <li>Ігрової техніки та аксесуарів</li>
+        </ul>
+        <p>
+            У CYBER PC ви отримуєте якісне обслуговування, офіційну гарантію, швидку доставку та технічну підтримку.
+        </p>
+    </div>
+</section>
+
+  <section>
+    <h2 class="title">Популярні товари</h2>
+    <div class="catalog">
+        <div class="product">
+          <a href="Acer Nitro 16.html">
+            <img src="img/img8.jpg" alt="Acer Nitro 16">
+          </a>
+            <h3>Acer Nitro 16</h3>
+            <p class="price">48 999 ₴</p>
+            <div class="rating">★★★★★</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="Acer Nitro 16">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('Acer Nitro 16')">🛒</button>
+            </div>
+        </div>
+        
+        <div class="product">
+          <a href="Asus TUF GAMING.html">
+              <img src="img/img5.jpg" alt="ASUS TUF Gaming">
+          </a>
+          <h3>ASUS TUF Gaming</h3>
+          <p class="price">35 999 ₴</p>
+          <div class="rating">★★★★☆</div>
+          <div class="product-actions">
+            <button class="buy-button" data-product="ASUS TUF Gaming">Купити</button>
+            <button class="cart-icon-btn" onclick="addToCart('ASUS TUF Gaming')">🛒</button>
+          </div>
+      </div>
+  
+        <div class="product">
+          <a href="PC2.html">
+            <img src="img/img15.jpg" alt="ARTLINE Gaming X49">
+          </a>
+            <h3>ARTLINE Gaming X49</h3>
+            <p class="price">29 999 ₴</p>
+            <div class="rating">★★★★☆</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="ARTLINE Gaming X49">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('ARTLINE Gaming X49')">🛒</button>
+            </div>
+          </div>
+  
+        <div class="product">
+          <a href="Monitor4.html">
+            <img src="img/img7.jpg" alt="Монітор 24">
+          </a>
+            <h3>Asus VG249QL3A</h3>
+            <p class="price">5 897 ₴</p>
+            <div class="rating">★★★☆☆</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="Asus VG249QL3A">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('Asus VG249QL3A')">🛒</button>
+            </div>
+        </div>
+    </div>
+  </section>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 CYBER PC. Всі права захищено.</p>
+    </div>
+</footer>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ТЕЛЕФОНУЙТЕ</h3>
+            <p class="phone">0 800 20 27 27</p>
+            <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+            <a href="#" class="contact-link">Написати нам</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>КОМПАНІЯ</h3>
+            <ul>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Новини</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Вакансії</a></li>
+                <li><a href="#">Постачальникам</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>ПОКУПЦЯМ</h3>
+            <ul>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Повернення</a></li>
+                <li><a href="#">Гарантія</a></li>
+                <li><a href="#">Послуги</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+            <ul>
+                <li><a href="#">Умови користування</a></li>
+                <li><a href="#">Портал для бізнесу</a></li>
+            </ul>
+            <div class="app-links">
+                 <a href="#"><img src="img/img40.svg" alt="App Store"></a><a href="#"><img src="img/img41.svg" alt="Google Play"></a>s
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

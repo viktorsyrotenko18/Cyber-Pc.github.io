@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Магазин</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+  <header class="header">
+    <div style="background-color: #12388e; padding: 10px;">
+      <a href="index.html" style="text-decoration: none; color: white; font-size: 24px;">
+        <strong>CYBER</strong> PC
+      </a>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Пошук">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="language">
+      <i class="fas fa-language"></i>
+      <a href="#">UK</a> | <a href="#">EN</a>
+    </div>
+
+    <div class="login">
+      <i class='bx bx-door-open'></i>
+      <button id="loginBtn">Увійти</button>
+  
+      <div id="loginModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Вхід у систему</h2>
+              <form id="loginForm" action="login.php" method="POST">
+                  <div class="form-group">
+                      <label for="username">Логін:</label>
+                      <input type="text" id="username" name="username" placeholder="Логін" required>
+                  </div>
+                  <div class="form-group">
+                      <label for="password">Пароль:</label>
+                      <input type="password" id="password" name="password" placeholder="Пароль" required>
+                  </div>
+                  <div class="button-group">
+                      <button type="button" class="cancel-button" id="cancelLoginBtn">Скасувати</button>
+                      <button type="submit" class="submit-button">Увійти</button>
+                  </div>
+                  <div id="loginError" class="error-message" style="display: none;">
+                      Невірний логін або пароль.
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+    <div class="cart">
+      <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+
+<!-- Модальне вікно корзини -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h2>🛒 Ваша корзина</h2>
+          <span class="close" onclick="closeCart()">&times;</span>
+      </div>
+
+      <div class="modal-body">
+          <ul id="cartItems">
+              </ul>
+          <div id="emptyCartMessage" style="display:none;">Ваша корзина порожня.</div>
+          <div class="total">Сума: <span id="totalPrice">0</span> ₴</div>
+      </div>
+
+      <div class="modal-footer">
+          <button class="checkout-btn"onclick="clearCart()">Очистити</button>
+      </div>
+  </div>
+</div>
+  </header>
+
+  <header>
+      <nav>
+        <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+        <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+        <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+        <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+        <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+      </nav>
+      
+      <!-- Контейнер для сторінок -->
+      <div id="content"></div>
+        </ul>
+    </nav>
+</header>
+
+<div class="slider">
+    <div class="slide active">
+        <div class="text-content">
+            <h1>Acer Predator Helios Neo 16</h1>
+            <p>Створений для геймерів, які вимагають точності та стилю, Predator Helios Neo 16 поєднує в собі найсучасніше апаратне забезпечення з яскравим OLED-дисплеєм та інструментами на основі штучного інтелекту.</p>
+            <a href="laptop.html" class="button">До каталогу</a>
+        </div>
+        <img src="img/11.jpg" alt="iPhone 14 Pro">
+    </div>
+</div>
+
+  <section class="categories">
+    <h2>Категорії магазину</h2>
+
+      <div class="category-container">
+      <div class="category-card">
+        <img src="img/img1.jpg" alt="Laptop" />
+        <a href="laptop.html">
+        <button class="category-btn">Ноутбуки</button>
+        </a>
+      </div>
+
+      <div class="category-card">
+        <img src="img/img2.jpg" alt="PC" />
+        <a href="PC.html">
+        <button class="category-btn">Комп'ютери</button>
+      </a>
+      </div>
+
+      <div class="category-card">
+        <img src="img/img3.jpg" alt="Monitor" />
+        <a href="Monitor.html">
+        <button class="category-btn">Монітори</button>
+      </a>
+      </div>
+      </div>
+      
+  </section>
+
+<section>
+  <div class="banner">
+    <h1>ЗНИЖКИ НА ПЕРИФЕРІЮ</h1>
+    <a href="Periphery.html" class="button">Переглянути</a>
+</div>
+</section>
+
+  <section>
+    <h2 class="title">Каталог товарів</h2>
+    <div class="catalog">
+        <div class="product">
+          <a href="Acer Nitro 16.html">
+            <img src="img/img8.jpg" alt="Acer Nitro 16">
+          </a>
+            <h3>Acer Nitro 16</h3>
+            <p class="price">48 999 ₴</p>
+            <div class="rating">★★★★★</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="Acer Nitro 16">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('Acer Nitro 16')">🛒</button>
+            </div>
+        </div>
+        
+        <div class="product">
+          <a href="Asus TUF GAMING.html">
+              <img src="img/img5.jpg" alt="ASUS TUF Gaming">
+          </a>
+          <h3>ASUS TUF Gaming</h3>
+          <p class="price">35 999 ₴</p>
+          <div class="rating">★★★★☆</div>
+          <div class="product-actions">
+            <button class="buy-button" data-product="ASUS TUF Gaming">Купити</button>
+            <button class="cart-icon-btn" onclick="addToCart('ASUS TUF Gaming')">🛒</button>
+          </div>
+      </div>
+  
+        <div class="product">
+          <a href="PC2.html">
+            <img src="img/img15.jpg" alt="ARTLINE Gaming X49">
+          </a>
+            <h3>ARTLINE Gaming X49</h3>
+            <p class="price">29 999 ₴</p>
+            <div class="rating">★★★★☆</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="ARTLINE Gaming X49">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('ARTLINE Gaming X49')">🛒</button>
+            </div>
+          </div>
+  
+        <div class="product">
+          <a href="Monitor4.html">
+            <img src="img/img7.jpg" alt="Монітор 24">
+          </a>
+            <h3>Asus VG249QL3A</h3>
+            <p class="price">5 897 ₴</p>
+            <div class="rating">★★★☆☆</div>
+            <div class="product-actions">
+              <button class="buy-button" data-product="Asus VG249QL3A">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('Asus VG249QL3A')">🛒</button>
+            </div>
+        </div>
+    </div>
+  </section>
+  
+  <div id="buyModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Оформлення замовлення</h2>
+          <form id="buyForm">
+              <div class="form-group">
+                  <label for="name">Ваше ім'я:</label>
+                  <input type="text" id="name" placeholder="Ваше ім'я" required>
+              </div>
+              <div class="form-group">
+                  <label for="phone">Телефон:</label>
+                  <input type="tel" id="phone" placeholder="Телефон" required>
+              </div>
+              <div class="form-group">
+                  <label for="address">Адреса доставки:</label>
+                  <input type="text" id="address" placeholder="Адреса доставки" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email (за бажанням):</label>
+                  <input type="email" id="email" placeholder="Ваш email">
+              </div>
+              <div class="form-group">
+                  <label for="quantity">Кількість:</label>
+                  <input type="number" id="quantity" value="1" min="1">
+              </div>
+              <div class="form-group">
+                  <label for="payment">Спосіб оплати:</label>
+                  <select id="payment">
+                      <option value="card">Кредитна картка</option>
+                      <option value="cash">Готівка при отриманні</option>
+                      <option value="online">Онлайн оплата</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="comments">Додаткові побажання:</label>
+                  <textarea id="comments" placeholder="Ваші коментарі до замовлення"></textarea>
+              </div>
+              <input type="hidden" id="selectedProduct">
+              <div class="button-group">
+                  <button type="button" class="cancel-button">Скасувати</button>
+                  <button type="submit" class="submit-button">Підтвердити замовлення</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+  <section class="blog">
+    <h2>Новини</h2>
+
+    <div class="blog-container">
+ 
+      <div class="blog-card">
+        <img src="img/img9.jpg" alt="">
+        <div class="blog-content">
+          <h3>Топ-5 ноутбуків для роботи та навчання у 2024 році</h3>
+          <p></p>
+          <a href="https://thebuchacity.com/top-5-noutbukiv-dlya-roboty-ta-navchannya-u-2024-roczi/">ДЕТАЛЬНІШЕ →</a>
+        </div>
+      </div>
+
+
+      <div class="blog-card">
+        <img src="img/img48.webp" alt="Сервіс онлайн музики">
+        <div class="blog-content">
+          <h3>Тест-драйв Logitech G515 LIGHTSPEED TKL у реальних ігрових баталіях</h3>
+          <p></p>
+          <a href="https://logitech.com.ua/lightspeed-v-dii-test-drayv-logitech-g515-lightspeed-tkl-i-logitech-g309-lightspeed-u-realnih-igrovih-bataliyah">ДЕТАЛЬНІШЕ →</a>
+        </div>
+      </div>
+
+
+      <div class="blog-card">
+        <img src="img/img24.png" alt="Слідкуйте за вашим здоров'ям">
+        <div class="blog-content">
+          <h3>NVIDIA® GeForce RTX™ 5090 — це найпотужніша відеокарта GeForce</h3>
+          <p></p>
+          <a href="https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/">ДЕТАЛЬНІШЕ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ТЕЛЕФОНУЙТЕ</h3>
+            <p class="phone">0 800 33 99 66</p>
+            <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+            <a href="#" class="contact-link">Написати нам</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>КОМПАНІЯ</h3>
+            <ul>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Новини</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Вакансії</a></li>
+                <li><a href="#">Постачальникам</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>ПОКУПЦЯМ</h3>
+            <ul>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Доставка</a></li>
+                <li><a href="#">Повернення</a></li>
+                <li><a href="#">Гарантія</a></li>
+                <li><a href="#">Послуги</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+            <ul>
+                <li><a href="#">Умови користування</a></li>
+                <li><a href="#">Портал для бізнесу</a></li>
+            </ul>
+            <div class="app-links">
+                <a href="#"><img src="img/img40.svg" alt="App Store"></a><a href="#"><img src="img/img41.svg" alt="Google Play"></a>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

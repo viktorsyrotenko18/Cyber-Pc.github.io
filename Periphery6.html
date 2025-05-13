@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperX Pulsefire Haste</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">CYBER <span>PC</span></div>
+    
+        <div class="search-box">
+          <input type="text" placeholder="Пошук">
+          <button><i class="fas fa-search"></i></button>
+        </div>
+    
+        <div class="language">
+          <i class="fas fa-language"></i>
+          <a href="#">UK</a> | <a href="#">RU</a> | <a href="#">EN</a>
+        </div>
+    
+        <div class="login">
+          <i class='bx bx-door-open'></i>
+          <button id="loginBtn">Увійти</button>
+    
+          <div id="loginModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <h2>Вхід у систему</h2>
+              <form action="login.php" method="POST">
+                <input type="text" name="username" placeholder="Логін" required>
+                <input type="password" name="password" placeholder="Пароль" required>
+                <button type="submit">Увійти</button>
+              </form>          
+            </div>
+          </div>
+        </div>
+    
+        <div class="cart">
+          <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+    
+    <!-- Модальне вікно корзини -->
+    <div id="cartModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCart()">&times;</span>
+        <h2>Ваша корзина</h2>
+        <ul id="cartItems"></ul>
+        <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+      </div>
+    </div>
+        </div>
+      </header>
+    
+      <header>
+          <nav>
+            <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+      <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+      <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+      <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+      <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+          </nav>
+          
+          <!-- Контейнер для сторінок -->
+          <div id="content"></div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Основний контент -->
+    <section class="product-container">
+        <div class="product-gallery">
+            <img src="img/img51.jpg" alt="">
+        </div>
+
+        <div class="product-info">
+            <h1>Ігрова миша HyperX Pulsefire Haste USB, Black/Red (4P5E3AA)</h1>
+            <h2>1 699₴</h2>
+
+            <button class="buy-button" data-product="Razer Cobra">Купити</button>
+            <button onclick="addToCart('Razer Cobra')">Додати в корзину</button>
+        </div>
+    </section>
+
+    <!-- Таблиця характеристик -->
+    <section class="specs">
+      <h2>Характеристики</h2>
+      <table>
+        <tr><td>Модель:</td><td>Pulsefire Haste USB</td></tr>
+        <tr><td>Тип підключення:</td><td>USB</td></tr>
+        <tr><td>Призначення:</td><td>Ігрові</td></tr>
+        <tr><td>Тип сенсора:</td><td>Оптичний</td></tr>
+    
+        <tr class="extra"><td>Кнопка перемикання DPI, Підсвічування:</td><td>Так</td></tr>
+<tr class="extra"><td>Особливості конструкції:</td><td>Кнопка перемикання DPI, Корпус з отворами, Підсвічування</td></tr>
+<tr class="extra"><td>Оптичний датчик:</td><td>Pixart 3335</td></tr>
+<tr class="extra"><td>Роздільна здатність сенсора (DPI):</td><td>16000</td></tr>
+<tr class="extra"><td>Максимальне прискорення:</td><td>40G</td></tr>
+<tr class="extra"><td>Кількість кнопок:</td><td>6</td></tr>
+<tr class="extra"><td>Ресурс клавіш:</td><td>60 000 000 натискань</td></tr>
+<tr class="extra"><td>Вбудована пам’ять:</td><td>Ні</td></tr>
+<tr class="extra"><td>Ергономіка:</td><td>Для обох рук (симетрична)</td></tr>
+<tr class="extra"><td>Розмір миші:</td><td>Середня</td></tr>
+<tr class="extra"><td>Підсвічування:</td><td>Так</td></tr>
+<tr class="extra"><td>Колір:</td><td>Чорний</td></tr>
+<tr class="extra"><td>Тип кабелю:</td><td>Паракорд</td></tr>
+<tr class="extra"><td>Довжина кабелю:</td><td>1,8 м</td></tr>
+<tr class="extra"><td>Живлення:</td><td>Від мережі</td></tr>
+<tr class="extra"><td>Матеріал:</td><td>Пластик</td></tr>
+<tr class="extra"><td>Функції та можливості:</td><td>Програмовані кнопки</td></tr>
+<tr class="extra"><td>Комплектація:</td><td>Миша, Набір запасних ніжок, Набір гумових накладок</td></tr>
+<tr class="extra"><td>Гарантія:</td><td>24 міс.</td></tr>
+<tr class="extra"><td>Розміри (ВхШхГ):</td><td>38 x 67 x 124 мм</td></tr>
+<tr class="extra"><td>Вага:</td><td>81 г</td></tr>
+      </table>
+    
+      <div class="show-more-btn" onclick="toggleSpecs()">Показати ще +</div>
+    </section>
+
+    <div id="buyModal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Оформлення замовлення</h2>
+          <form id="buyForm">
+              <div class="form-group">
+                  <label for="name">Ваше ім'я:</label>
+                  <input type="text" id="name" placeholder="Ваше ім'я" required>
+              </div>
+              <div class="form-group">
+                  <label for="phone">Телефон:</label>
+                  <input type="tel" id="phone" placeholder="Телефон" required>
+              </div>
+              <div class="form-group">
+                  <label for="address">Адреса доставки:</label>
+                  <input type="text" id="address" placeholder="Адреса доставки" required>
+              </div>
+              <div class="form-group">
+                  <label for="email">Email (за бажанням):</label>
+                  <input type="email" id="email" placeholder="Ваш email">
+              </div>
+              <div class="form-group">
+                  <label for="quantity">Кількість:</label>
+                  <input type="number" id="quantity" value="1" min="1">
+              </div>
+              <div class="form-group">
+                  <label for="payment">Спосіб оплати:</label>
+                  <select id="payment">
+                      <option value="card">Кредитна картка</option>
+                      <option value="cash">Готівка при отриманні</option>
+                      <option value="online">Онлайн оплата</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="comments">Додаткові побажання:</label>
+                  <textarea id="comments" placeholder="Ваші коментарі до замовлення"></textarea>
+              </div>
+              <input type="hidden" id="selectedProduct">
+              <div class="button-group">
+                  <button type="button" class="cancel-button">Скасувати</button>
+                  <button type="submit" class="submit-button">Підтвердити замовлення</button>
+              </div>
+          </form>
+      </div>
+  </div>
+    
+   
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h3>ТЕЛЕФОНУЙТЕ</h3>
+              <p class="phone">0 800 33 99 66</p>
+              <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+              <a href="#" class="contact-link">Написати нам</a>
+          </div>
+  
+          <div class="footer-section">
+              <h3>КОМПАНІЯ</h3>
+              <ul>
+                  <li><a href="#">Про нас</a></li>
+                  <li><a href="#">Новини</a></li>
+                  <li><a href="#">Контакти</a></li>
+                  <li><a href="#">Вакансії</a></li>
+                  <li><a href="#">Постачальникам</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section">
+              <h3>ПОКУПЦЯМ</h3>
+              <ul>
+                  <li><a href="#">Оплата</a></li>
+                  <li><a href="#">Доставка</a></li>
+                  <li><a href="#">Повернення</a></li>
+                  <li><a href="#">Гарантія</a></li>
+                  <li><a href="#">Послуги</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section">
+              <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+              <ul>
+                  <li><a href="#">Умови користування</a></li>
+                  <li><a href="#">Портал для бізнесу</a></li>
+              </ul>
+              <div class="app-links">
+                  <a href="#"><img src="img/img40.svg" alt="App Store"></a><a href="#"><img src="img/img41.svg" alt="Google Play"></a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

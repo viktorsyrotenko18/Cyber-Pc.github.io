@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asus ROG Strix G16</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">CYBER <span>PC</span></div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Пошук">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+
+    <div class="language">
+      <i class="fas fa-language"></i>
+      <a href="#">UK</a> | <a href="#">RU</a> | <a href="#">EN</a>
+    </div>
+
+    <div class="login">
+      <i class='bx bx-door-open'></i>
+      <button id="loginBtn">Увійти</button>
+
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Вхід у систему</h2>
+          <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Логін" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Увійти</button>
+          </form>            
+        </div>
+      </div>
+    </div>
+
+    <div class="cart">
+      <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+
+<!-- Модальне вікно корзини -->
+<div id="cartModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2>Ваша корзина</h2>
+    <ul id="cartItems"></ul>
+    <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+  </div>
+</div>
+    </div>
+  </header>
+
+
+    <header>
+      <nav>
+        <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+      <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+      <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+      <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+      <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+      </nav>
+      
+      <!-- Контейнер для сторінок -->
+      <div id="content"></div>
+        </ul>
+    </nav>
+</header>
+
+    <!-- Основний контент -->
+    <section class="product-container">
+        <div class="product-gallery">
+            <img src="img/img1.jpg" alt="">
+        </div>
+
+        <div class="product-info">
+            <h1>Ноутбук Asus ROG Strix G16 G614JV-N3143 Eclipse Gray</h1>
+            <p>Екран 16” IPS (1920x1200) WUXGA 165Hz, Матовий / Intel Core i7-13650HX (3.60-4.90 GHz) / RAM 16 ГБ / SSD 1Тб / NVIDIA GeForce RTX 4060 8ГБ DDR6 / Bluetooth / веб-камера / Windows 11 Pro / 2,50 кг / Графітовий</p>
+            <h2>65 999₴</h2>
+
+            <button class="buy-button" data-product="ASUS ROG Strix">Купити</button>
+        <button onclick="addToCart('ASUS ROG Strix')">Додати в корзину</button>
+        </div>
+    </section>
+
+    <!-- Таблиця характеристик -->
+    <section class="specs">
+        <h2>Характеристики</h2>
+        <table>
+            <tr><td>Процесор:</td><td>Intel Core i7-13650HX</td></tr>
+            <tr><td>Відеокарта:</td><td>GeForce RTX 4060 </td></tr>
+            <tr><td>Накопичувачі даних:</td><td>Обсяг SSD 512 ГБ</td></tr>
+            <tr><td>Оперативна пам'ять:</td><td>16 ГБ</td></tr>
+            <tr class="extra"><td>Екран:</td><td>16" IPS, 1920x1200 (WUXGA), Full HD, 165 Гц, антибліковий</td></tr>
+            <tr class="extra"><td>Процесор:</td><td>Intel Core i7-13650HX (14 ядер, 3.6–4.9 ГГц)</td></tr>
+            <tr class="extra"><td>Операційна система:</td><td>Без ОС</td></tr>
+            <tr class="extra"><td>Оперативна пам’ять:</td><td>16 ГБ DDR5-4800, максимум 32 ГБ</td></tr>
+            <tr class="extra"><td>Накопичувач:</td><td>512 ГБ SSD</td></tr>
+            <tr class="extra"><td>Відеокарта:</td><td>NVIDIA GeForce RTX 4060, 8 ГБ, дискретна</td></tr>
+            <tr class="extra"><td>Мережа:</td><td>Wi-Fi 6E (802.11ax), Bluetooth</td></tr>
+            <tr class="extra"><td>USB порти:</td><td>1 x Thunderbolt 4 (DP), 1 x USB 3.2 Gen2 Type-C, 2 x USB 3.2 Gen2 Type-A</td></tr>
+            <tr class="extra"><td>Інші роз’єми:</td><td>HDMI 2.1 FRL, RJ-45 LAN, комбінований аудіороз'єм</td></tr>
+            <tr class="extra"><td>Акумулятор:</td><td>Li-Ion, 4 комірки</td></tr>
+            <tr class="extra"><td>Вага:</td><td>2.5 кг</td></tr>
+            <tr class="extra"><td>Габарити:</td><td>22.6–30.4 x 354 x 264 мм</td></tr>
+            <tr class="extra"><td>Колір:</td><td>Сірий</td></tr>
+            <tr class="extra"><td>Тип відеокарти:</td><td>Дискретна</td></tr>
+            <tr class="extra"><td>Тип екрана:</td><td>Не сенсорний</td></tr>
+             </table>
+           
+             <div class="show-more-btn" onclick="toggleSpecs()">Показати ще +</div>
+           </section>
+
+           <div id="buyModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Оформлення замовлення</h2>
+                <form id="buyForm">
+                    <div class="form-group">
+                        <label for="name">Ваше ім'я:</label>
+                        <input type="text" id="name" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <input type="tel" id="phone" placeholder="Телефон" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Адреса доставки:</label>
+                        <input type="text" id="address" placeholder="Адреса доставки" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email (за бажанням):</label>
+                        <input type="email" id="email" placeholder="Ваш email">
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Кількість:</label>
+                        <input type="number" id="quantity" value="1" min="1">
+                    </div>
+                    <div class="form-group">
+                        <label for="payment">Спосіб оплати:</label>
+                        <select id="payment">
+                            <option value="card">Кредитна картка</option>
+                            <option value="cash">Готівка при отриманні</option>
+                            <option value="online">Онлайн оплата</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comments">Додаткові побажання:</label>
+                        <textarea id="comments" placeholder="Ваші коментарі до замовлення"></textarea>
+                    </div>
+                    <input type="hidden" id="selectedProduct">
+                    <div class="button-group">
+                        <button type="button" class="cancel-button">Скасувати</button>
+                        <button type="submit" class="submit-button">Підтвердити замовлення</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h3>ТЕЛЕФОНУЙТЕ</h3>
+              <p class="phone">0 800 33 99 66</p>
+              <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+              <a href="#" class="contact-link">Написати нам</a>
+          </div>
+  
+          <div class="footer-section">
+              <h3>КОМПАНІЯ</h3>
+              <ul>
+                  <li><a href="#">Про нас</a></li>
+                  <li><a href="#">Новини</a></li>
+                  <li><a href="#">Контакти</a></li>
+                  <li><a href="#">Вакансії</a></li>
+                  <li><a href="#">Постачальникам</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section">
+              <h3>ПОКУПЦЯМ</h3>
+              <ul>
+                  <li><a href="#">Оплата</a></li>
+                  <li><a href="#">Доставка</a></li>
+                  <li><a href="#">Повернення</a></li>
+                  <li><a href="#">Гарантія</a></li>
+                  <li><a href="#">Послуги</a></li>
+              </ul>
+          </div>
+  
+          <div class="footer-section">
+              <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+              <ul>
+                  <li><a href="#">Умови користування</a></li>
+                  <li><a href="#">Портал для бізнесу</a></li>
+              </ul>
+              <div class="app-links">
+                  <a href="#"><img src="img/img40.svg" alt="App Store"></a><a href="#"><img src="img/img41.svg" alt="Google Play"></a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

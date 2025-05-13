@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Доставка та оплата</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">CYBER <span>PC</span></div>
+
+  <div class="search-box">
+    <input type="text" placeholder="Пошук">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <div class="language">
+    <i class="fas fa-language"></i>
+    <a href="#">UK</a> | <a href="#">EN</a>
+  </div>
+
+  <div class="login">
+    <i class='bx bx-door-open'></i>
+    <button id="loginBtn">Увійти</button>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Вхід у систему</h2>
+        <form action="login.php" method="POST">
+          <input type="text" name="username" placeholder="Логін" required>
+          <input type="password" name="password" placeholder="Пароль" required>
+          <button type="submit">Увійти</button>
+        </form>          
+      </div>
+    </div>
+  </div>
+
+  <div class="cart">
+    <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+
+<!-- Модальне вікно корзини -->
+<div id="cartModal" class="modal">
+<div class="modal-content">
+  <span class="close" onclick="closeCart()">&times;</span>
+  <h2>Ваша корзина</h2>
+  <ul id="cartItems"></ul>
+  <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+</div>
+</div>
+  </div>
+</header>
+
+<header>
+    <nav>
+      <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+      <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+      <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+      <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+      <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+    </nav>
+    
+    <!-- Контейнер для сторінок -->
+    <div id="content"></div>
+      </ul>
+  </nav>
+</header>
+
+<main class="content">
+  <section class="info-section">
+    <h1>Доставка та оплата</h1>
+
+    <h2>Доставка</h2>
+    <ul>
+      <li><strong>Нова Пошта:</strong> доставка по всій Україні, термін — 1-3 дні.</li>
+      <li><strong>Кур'єрська доставка:</strong> по місту — протягом дня при замовленні до 12:00.</li>
+      <li><strong>Самовивіз:</strong> з нашого магазину з 10:00 до 19:00 щодня.</li>
+    </ul>
+
+    <h2>Вартість доставки</h2>
+    <p>Безкоштовно при замовленні від 5 000 ₴. В іншому випадку — згідно з тарифами перевізника.</p>
+
+    <h2>Оплата</h2>
+    <ul>
+      <li><strong>Готівкою</strong> при отриманні замовлення.</li>
+      <li><strong>Банківською карткою</strong> (Visa/MasterCard) онлайн через платіжну систему.</li>
+      <li><strong>Оплата частинами</strong> — доступна для клієнтів ПриватБанку та monobank.</li>
+      <li><strong>Безготівкова оплата</strong> для юридичних осіб (рахунок-фактура з ПДВ).</li>
+    </ul>
+
+    <h2>Гарантія</h2>
+    <p>Ми надаємо офіційну гарантію від виробника на всі товари. Умови повернення згідно з <a href="#">законодавством України</a>.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <h3>ТЕЛЕФОНУЙТЕ</h3>
+          <p class="phone">0 800 20 27 27</p>
+          <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+          <a href="#" class="contact-link">Написати нам</a>
+      </div>
+
+      <div class="footer-section">
+          <h3>КОМПАНІЯ</h3>
+          <ul>
+              <li><a href="#">Про нас</a></li>
+              <li><a href="News.html">Новини</a></li>
+              <li><a href="Contacts.html">Контакти</a></li>
+              <li><a href="#">Вакансії</a></li>
+              <li><a href="Delivery.html">Постачальникам</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-section">
+          <h3>ПОКУПЦЯМ</h3>
+          <ul>
+              <li><a href="Delivery.html">Оплата</a></li>
+              <li><a href="Delivery.html">Доставка</a></li>
+              <li><a href="Delivery.html">Повернення</a></li>
+              <li><a href="Delivery.html">Гарантія</a></li>
+              <li><a href="Delivery.html">Послуги</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-section">
+          <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+          <ul>
+              <li><a href="#">Умови користування</a></li>
+              <li><a href="#">Портал для бізнесу</a></li>
+          </ul>
+          <div class="app-links">
+              <a href="#"><img src="appstore.png" alt="App Store"></a>
+              <a href="#"><img src="googleplay.png" alt="Google Play"></a>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+

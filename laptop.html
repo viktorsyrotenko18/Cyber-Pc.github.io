@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ноутбуки</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" href="img/logo.png" type="img/png">
+</head>
+<body>
+  <header class="header">
+    <div style="background-color: #12388e; padding: 10px;">
+      <a href="index.html" style="text-decoration: none; color: white; font-size: 24px;">
+        <strong>CYBER</strong> PC
+      </a>
+    </div>
+    <div class="search-box">
+      <input type="text" placeholder="Пошук">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <div class="language">
+      <i class="fas fa-language"></i>
+      <a href="#">UK</a> | <a href="#">EN</a>
+    </div>
+
+    <div class="login">
+      <i class='bx bx-door-open'></i>
+      <button id="loginBtn">Увійти</button>
+
+      <div id="loginModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Вхід у систему</h2>
+          <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="Логін" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit">Увійти</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart">
+      <button class="cart-btn" onclick="openCart()">🛒 Корзина (<span id="cart-count">0</span>)</button>
+      <div id="cartModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeCart()">&times;</span>
+          <h2>Ваша корзина</h2>
+          <ul id="cartItems"></ul>
+          <button class="clear-btn" onclick="clearCart()">Очистити корзину</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <header>
+    <nav>
+      <a href="index.html" onclick="navigate('home')">ГОЛОВНА</a>
+      <a href="Shop.html" onclick="navigate('shop')">МАГАЗИН</a>
+      <a href="Buyers.html" onclick="navigate('buyers')">ПОКУПЦЯМ</a>
+      <a href="News.html" onclick="navigate('news')">НОВИНИ</a>
+      <a href="Contacts.html" onclick="navigate('contacts')">КОНТАКТИ</a>
+    </nav>
+    
+    <!-- Контейнер для сторінок -->
+    <div id="content"></div>
+      </ul>
+  </nav>
+</header>
+  <main>
+    <aside class="filters">
+  <h3>📂 Всі категорії</h3>
+  <div class="category">Ноутбуки</div>
+
+  <h4>Фільтри</h4>
+
+  <!-- Ціна -->
+  <div class="filter">
+    <label>Ціна</label>
+    <div class="price-inputs">
+      <input type="number" id="minPrice" placeholder="Від">
+      <input type="number" id="maxPrice" placeholder="До">
+    </div>
+    <button onclick="filterByPrice()">Застосувати</button>
+  </div>
+
+  <!-- Виробник -->
+  <div class="filter">
+    <label>Виробник</label>
+    <select id="manufacturerFilter" onchange="filterByManufacturer()">
+      <option value="all">Усі</option>
+      <option value="Asus">Asus</option>
+      <option value="Acer">Acer</option>
+    </select>
+  </div>
+</aside>
+    <section class="products">
+      
+      <div class="sort-container">
+  <label for="sort">Сортувати:</label>
+  <select id="sort">
+    <option value="default">За замовчуванням</option>
+    <option value="low-to-high">Від дешевих до дорогих</option>
+    <option value="high-to-low">Від дорогих до дешевих</option>
+  </select>
+</div>
+
+    <section class="products">
+      <div class="product-grid">
+        <!-- Один продукт -->
+        <div class="product-card" data-price="65999">
+          <a href="Asus ROG Strix.html">
+            <img src="img/img1.jpg" alt="">
+          </a>
+          <div class="product-info">
+            <h3>Ноутбук Asus ROG Strix G16 G614JV-N3143 Eclipse Gray</h3>
+            <p class="rating">★★★★☆ <span>(2)</span></p>
+            <p class="price">65 999 ₴</p>
+            <div class="product-actions">
+            <button class="buy-button" data-product="Asus ROG Strix G16">Купити</button>
+            <button class="cart-icon-btn" onclick="addToCart('Asus ROG Strix G16')">🛒</button>
+          </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-price="48999">
+          <a href="Acer Nitro 17.html">
+          <img src="img/img8.jpg" alt="">
+      </a>
+          <div class="product-info">
+              <h3>Ноутбук Acer Nitro 17 AN17-51-53LU (NH.QK5EU.00G)</h3>
+              <p class="rating">★★★★☆ <span>(3)</span></p>
+              <p class="price">48 999₴</p>
+              <div class="product-actions">
+              <button class="buy-button" data-product="Asus ROG Strix G16">Купити</button>
+              <button class="cart-icon-btn" onclick="addToCart('Asus ROG Strix G16')">🛒</button>
+            </div>
+          </div>
+      </div>
+
+      <div class="product-card" data-price="35999">
+        <a href="Asus TUF GAMING.html">
+        <img src="img/img5.jpg" alt="">
+        </a>
+        <div class="product-info">
+            <h3>Ноутбук ASUS TUF Gaming F15 FX507ZC4-HN083</h3>
+            <p class="rating">★★★★★ <span>(2)</span></p>
+            <p class="price">35 999₴</p>
+            <div class="product-actions">
+            <button class="buy-button" data-product="Asus TUF GAMING.html">Купити</button>
+            <button class="cart-icon-btn" onclick="addToCart('Asus TUF GAMING.html')">🛒</button>
+          </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="47999">
+      <a href="Acer Nitro 5.html">
+      <img src="img/img4.jpg" alt="">
+      </a>
+      <div class="product-info">
+          <h3>Ноутбук Acer Nitro 5 AN515-58-539L (NH.QM0EU.00D)</h3>
+          <p class="rating">★★★★★ <span>(2)</span></p>
+          <p class="price">47 999₴</p>
+          <div class="product-actions">
+          <button class="buy-button" data-product="Acer Nitro 5.html">Купити</button>
+          <button class="cart-icon-btn" onclick="addToCart('Acer Nitro 5.html')">🛒</button>
+        </div>
+</div>
+
+      </div>
+    </section>
+  </main>
+
+  <div id="buyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Оформлення замовлення</h2>
+        <form id="buyForm">
+            <div class="form-group">
+                <label for="name">Ваше ім'я:</label>
+                <input type="text" id="name" placeholder="Ваше ім'я" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" placeholder="Телефон" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Адреса доставки:</label>
+                <input type="text" id="address" placeholder="Адреса доставки" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email (за бажанням):</label>
+                <input type="email" id="email" placeholder="Ваш email">
+            </div>
+            <div class="form-group">
+                <label for="quantity">Кількість:</label>
+                <input type="number" id="quantity" value="1" min="1">
+            </div>
+            <div class="form-group">
+                <label for="payment">Спосіб оплати:</label>
+                <select id="payment">
+                    <option value="card">Кредитна картка</option>
+                    <option value="cash">Готівка при отриманні</option>
+                    <option value="online">Онлайн оплата</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Додаткові побажання:</label>
+                <textarea id="comments" placeholder="Ваші коментарі до замовлення"></textarea>
+            </div>
+            <input type="hidden" id="selectedProduct">
+            <div class="button-group">
+                <button type="button" class="cancel-button">Скасувати</button>
+                <button type="submit" class="submit-button">Підтвердити замовлення</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>ТЕЛЕФОНУЙТЕ</h3>
+        <p class="phone">0 800 33 99 66</p>
+        <p>з 7:30 до 22:00<br>Без вихідних<br>Безкоштовно</p>
+        <a href="#" class="contact-link">Написати нам</a>
+    </div>
+
+    <div class="footer-section">
+        <h3>КОМПАНІЯ</h3>
+        <ul>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Новини</a></li>
+            <li><a href="#">Контакти</a></li>
+            <li><a href="#">Вакансії</a></li>
+            <li><a href="#">Постачальникам</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3>ПОКУПЦЯМ</h3>
+        <ul>
+            <li><a href="#">Оплата</a></li>
+            <li><a href="#">Доставка</a></li>
+            <li><a href="#">Повернення</a></li>
+            <li><a href="#">Гарантія</a></li>
+            <li><a href="#">Послуги</a></li>
+        </ul>
+    </div>
+
+    <div class="footer-section">
+        <h3>КОРИСНА ІНФОРМАЦІЯ</h3>
+        <ul>
+            <li><a href="#">Умови користування</a></li>
+            <li><a href="#">Портал для бізнесу</a></li>
+        </ul>
+        <div class="app-links">
+            <a href="#"><img src="img/img40.svg" alt="App Store"></a><a href="#"><img src="img/img41.svg" alt="Google Play"></a>
+        </div>
+    </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
